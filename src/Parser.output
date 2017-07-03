@@ -1,0 +1,1737 @@
+Terminals which are not used
+
+   _ERROR_
+
+
+State 124 conflicts: 1 shift/reduce
+
+
+Grammar
+
+    0 $accept: Program $end
+
+    1 Program: ListTopDef
+
+    2 TopDef: Type _IDENT_ _SYMB_0 ListArg _SYMB_1 Block
+
+    3 ListTopDef: TopDef
+    4           | TopDef ListTopDef
+
+    5 Arg: Type _IDENT_
+
+    6 ListArg: /* empty */
+    7        | Arg
+    8        | Arg _SYMB_2 ListArg
+
+    9 Acc: _IDENT_ _SYMB_3 Expr _SYMB_4
+
+   10 Block: _SYMB_5 ListStmt _SYMB_6
+
+   11 ListStmt: /* empty */
+   12         | ListStmt Stmt
+
+   13 Stmt: _SYMB_7
+   14     | Block
+   15     | Type ListItem _SYMB_7
+   16     | _IDENT_ _SYMB_8 Expr _SYMB_7
+   17     | Acc _SYMB_8 Expr _SYMB_7
+   18     | _IDENT_ _SYMB_9 _SYMB_7
+   19     | _IDENT_ _SYMB_10 _SYMB_7
+   20     | _SYMB_35 Expr _SYMB_7
+   21     | _SYMB_35 _SYMB_7
+   22     | _SYMB_31 _SYMB_0 Expr _SYMB_1 Stmt
+   23     | _SYMB_31 _SYMB_0 Expr _SYMB_1 Stmt _SYMB_28 Stmt
+   24     | _SYMB_39 _SYMB_0 Expr _SYMB_1 Stmt
+   25     | Expr _SYMB_7
+   26     | _SYMB_30 _SYMB_0 Type _IDENT_ _SYMB_11 Expr _SYMB_1 Stmt
+
+   27 Item: _IDENT_
+   28     | _IDENT_ _SYMB_8 Expr
+
+   29 ListItem: Item
+   30         | Item _SYMB_2 ListItem
+
+   31 Type: _SYMB_32
+   32     | _SYMB_36
+   33     | _SYMB_27
+   34     | _SYMB_38
+   35     | Type _SYMB_3 _SYMB_4
+
+   36 Expr6: _IDENT_ _SYMB_12 _SYMB_33
+   37      | _IDENT_
+   38      | _INTEGER_
+   39      | _SYMB_37
+   40      | _SYMB_29
+   41      | _IDENT_ _SYMB_0 ListExpr _SYMB_1
+   42      | _STRING_
+   43      | _SYMB_0 Expr _SYMB_1
+
+   44 Expr5: _SYMB_13 Expr6
+   45      | _SYMB_14 Expr6
+   46      | _SYMB_34 Type _SYMB_3 Expr6 _SYMB_4
+   47      | Acc
+   48      | Expr6
+
+   49 Expr4: Expr4 MulOp Expr5
+   50      | Expr5
+
+   51 Expr3: Expr3 AddOp Expr4
+   52      | Expr4
+
+   53 Expr2: Expr2 RelOp Expr3
+   54      | Expr3
+
+   55 Expr1: Expr2 _SYMB_15 Expr1
+   56      | Expr2
+
+   57 Expr: Expr1 _SYMB_16 Expr
+   58     | Expr1
+
+   59 ListExpr: /* empty */
+   60         | Expr
+   61         | Expr _SYMB_2 ListExpr
+
+   62 AddOp: _SYMB_17
+   63      | _SYMB_13
+
+   64 MulOp: _SYMB_18
+   65      | _SYMB_19
+   66      | _SYMB_20
+
+   67 RelOp: _SYMB_21
+   68      | _SYMB_22
+   69      | _SYMB_23
+   70      | _SYMB_24
+   71      | _SYMB_25
+   72      | _SYMB_26
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+_ERROR_ (258)
+_SYMB_0 (259) 2 22 23 24 26 41 43
+_SYMB_1 (260) 2 22 23 24 26 41 43
+_SYMB_2 (261) 8 30 61
+_SYMB_3 (262) 9 35 46
+_SYMB_4 (263) 9 35 46
+_SYMB_5 (264) 10
+_SYMB_6 (265) 10
+_SYMB_7 (266) 13 15 16 17 18 19 20 21 25
+_SYMB_8 (267) 16 17 28
+_SYMB_9 (268) 18
+_SYMB_10 (269) 19
+_SYMB_11 (270) 26
+_SYMB_12 (271) 36
+_SYMB_13 (272) 44 63
+_SYMB_14 (273) 45
+_SYMB_15 (274) 55
+_SYMB_16 (275) 57
+_SYMB_17 (276) 62
+_SYMB_18 (277) 64
+_SYMB_19 (278) 65
+_SYMB_20 (279) 66
+_SYMB_21 (280) 67
+_SYMB_22 (281) 68
+_SYMB_23 (282) 69
+_SYMB_24 (283) 70
+_SYMB_25 (284) 71
+_SYMB_26 (285) 72
+_SYMB_27 (286) 33
+_SYMB_28 (287) 23
+_SYMB_29 (288) 40
+_SYMB_30 (289) 26
+_SYMB_31 (290) 22 23
+_SYMB_32 (291) 31
+_SYMB_33 (292) 36
+_SYMB_34 (293) 46
+_SYMB_35 (294) 20 21
+_SYMB_36 (295) 32
+_SYMB_37 (296) 39
+_SYMB_38 (297) 34
+_SYMB_39 (298) 24
+_STRING_ (299) 42
+_INTEGER_ (300) 38
+_IDENT_ (301) 2 5 9 16 18 19 26 27 28 36 37 41
+
+
+Nonterminals, with rules where they appear
+
+$accept (47)
+    on left: 0
+Program (48)
+    on left: 1, on right: 0
+TopDef (49)
+    on left: 2, on right: 3 4
+ListTopDef (50)
+    on left: 3 4, on right: 1 4
+Arg (51)
+    on left: 5, on right: 7 8
+ListArg (52)
+    on left: 6 7 8, on right: 2 8
+Acc (53)
+    on left: 9, on right: 17 47
+Block (54)
+    on left: 10, on right: 2 14
+ListStmt (55)
+    on left: 11 12, on right: 10 12
+Stmt (56)
+    on left: 13 14 15 16 17 18 19 20 21 22 23 24 25 26,
+    on right: 12 22 23 24 26
+Item (57)
+    on left: 27 28, on right: 29 30
+ListItem (58)
+    on left: 29 30, on right: 15 30
+Type (59)
+    on left: 31 32 33 34 35, on right: 2 5 15 26 35 46
+Expr6 (60)
+    on left: 36 37 38 39 40 41 42 43, on right: 44 45 46 48
+Expr5 (61)
+    on left: 44 45 46 47 48, on right: 49 50
+Expr4 (62)
+    on left: 49 50, on right: 49 51 52
+Expr3 (63)
+    on left: 51 52, on right: 51 53 54
+Expr2 (64)
+    on left: 53 54, on right: 53 55 56
+Expr1 (65)
+    on left: 55 56, on right: 55 57 58
+Expr (66)
+    on left: 57 58, on right: 9 16 17 20 22 23 24 25 26 28 43 57 60
+    61
+ListExpr (67)
+    on left: 59 60 61, on right: 41 61
+AddOp (68)
+    on left: 62 63, on right: 51
+MulOp (69)
+    on left: 64 65 66, on right: 49
+RelOp (70)
+    on left: 67 68 69 70 71 72, on right: 53
+
+
+state 0
+
+    0 $accept: . Program $end
+
+    _SYMB_27  shift, and go to state 1
+    _SYMB_32  shift, and go to state 2
+    _SYMB_36  shift, and go to state 3
+    _SYMB_38  shift, and go to state 4
+
+    Program     go to state 5
+    TopDef      go to state 6
+    ListTopDef  go to state 7
+    Type        go to state 8
+
+
+state 1
+
+   33 Type: _SYMB_27 .
+
+    $default  reduce using rule 33 (Type)
+
+
+state 2
+
+   31 Type: _SYMB_32 .
+
+    $default  reduce using rule 31 (Type)
+
+
+state 3
+
+   32 Type: _SYMB_36 .
+
+    $default  reduce using rule 32 (Type)
+
+
+state 4
+
+   34 Type: _SYMB_38 .
+
+    $default  reduce using rule 34 (Type)
+
+
+state 5
+
+    0 $accept: Program . $end
+
+    $end  shift, and go to state 9
+
+
+state 6
+
+    3 ListTopDef: TopDef .
+    4           | TopDef . ListTopDef
+
+    _SYMB_27  shift, and go to state 1
+    _SYMB_32  shift, and go to state 2
+    _SYMB_36  shift, and go to state 3
+    _SYMB_38  shift, and go to state 4
+
+    $default  reduce using rule 3 (ListTopDef)
+
+    TopDef      go to state 6
+    ListTopDef  go to state 10
+    Type        go to state 8
+
+
+state 7
+
+    1 Program: ListTopDef .
+
+    $default  reduce using rule 1 (Program)
+
+
+state 8
+
+    2 TopDef: Type . _IDENT_ _SYMB_0 ListArg _SYMB_1 Block
+   35 Type: Type . _SYMB_3 _SYMB_4
+
+    _SYMB_3  shift, and go to state 11
+    _IDENT_  shift, and go to state 12
+
+
+state 9
+
+    0 $accept: Program $end .
+
+    $default  accept
+
+
+state 10
+
+    4 ListTopDef: TopDef ListTopDef .
+
+    $default  reduce using rule 4 (ListTopDef)
+
+
+state 11
+
+   35 Type: Type _SYMB_3 . _SYMB_4
+
+    _SYMB_4  shift, and go to state 13
+
+
+state 12
+
+    2 TopDef: Type _IDENT_ . _SYMB_0 ListArg _SYMB_1 Block
+
+    _SYMB_0  shift, and go to state 14
+
+
+state 13
+
+   35 Type: Type _SYMB_3 _SYMB_4 .
+
+    $default  reduce using rule 35 (Type)
+
+
+state 14
+
+    2 TopDef: Type _IDENT_ _SYMB_0 . ListArg _SYMB_1 Block
+
+    _SYMB_27  shift, and go to state 1
+    _SYMB_32  shift, and go to state 2
+    _SYMB_36  shift, and go to state 3
+    _SYMB_38  shift, and go to state 4
+
+    $default  reduce using rule 6 (ListArg)
+
+    Arg      go to state 15
+    ListArg  go to state 16
+    Type     go to state 17
+
+
+state 15
+
+    7 ListArg: Arg .
+    8        | Arg . _SYMB_2 ListArg
+
+    _SYMB_2  shift, and go to state 18
+
+    $default  reduce using rule 7 (ListArg)
+
+
+state 16
+
+    2 TopDef: Type _IDENT_ _SYMB_0 ListArg . _SYMB_1 Block
+
+    _SYMB_1  shift, and go to state 19
+
+
+state 17
+
+    5 Arg: Type . _IDENT_
+   35 Type: Type . _SYMB_3 _SYMB_4
+
+    _SYMB_3  shift, and go to state 11
+    _IDENT_  shift, and go to state 20
+
+
+state 18
+
+    8 ListArg: Arg _SYMB_2 . ListArg
+
+    _SYMB_27  shift, and go to state 1
+    _SYMB_32  shift, and go to state 2
+    _SYMB_36  shift, and go to state 3
+    _SYMB_38  shift, and go to state 4
+
+    $default  reduce using rule 6 (ListArg)
+
+    Arg      go to state 15
+    ListArg  go to state 21
+    Type     go to state 17
+
+
+state 19
+
+    2 TopDef: Type _IDENT_ _SYMB_0 ListArg _SYMB_1 . Block
+
+    _SYMB_5  shift, and go to state 22
+
+    Block  go to state 23
+
+
+state 20
+
+    5 Arg: Type _IDENT_ .
+
+    $default  reduce using rule 5 (Arg)
+
+
+state 21
+
+    8 ListArg: Arg _SYMB_2 ListArg .
+
+    $default  reduce using rule 8 (ListArg)
+
+
+state 22
+
+   10 Block: _SYMB_5 . ListStmt _SYMB_6
+
+    $default  reduce using rule 11 (ListStmt)
+
+    ListStmt  go to state 24
+
+
+state 23
+
+    2 TopDef: Type _IDENT_ _SYMB_0 ListArg _SYMB_1 Block .
+
+    $default  reduce using rule 2 (TopDef)
+
+
+state 24
+
+   10 Block: _SYMB_5 ListStmt . _SYMB_6
+   12 ListStmt: ListStmt . Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_5    shift, and go to state 22
+    _SYMB_6    shift, and go to state 26
+    _SYMB_7    shift, and go to state 27
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_27   shift, and go to state 1
+    _SYMB_29   shift, and go to state 30
+    _SYMB_30   shift, and go to state 31
+    _SYMB_31   shift, and go to state 32
+    _SYMB_32   shift, and go to state 2
+    _SYMB_34   shift, and go to state 33
+    _SYMB_35   shift, and go to state 34
+    _SYMB_36   shift, and go to state 3
+    _SYMB_37   shift, and go to state 35
+    _SYMB_38   shift, and go to state 4
+    _SYMB_39   shift, and go to state 36
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 39
+
+    Acc    go to state 40
+    Block  go to state 41
+    Stmt   go to state 42
+    Type   go to state 43
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 50
+
+
+state 25
+
+   43 Expr6: _SYMB_0 . Expr _SYMB_1
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 53
+
+
+state 26
+
+   10 Block: _SYMB_5 ListStmt _SYMB_6 .
+
+    $default  reduce using rule 10 (Block)
+
+
+state 27
+
+   13 Stmt: _SYMB_7 .
+
+    $default  reduce using rule 13 (Stmt)
+
+
+state 28
+
+   44 Expr5: _SYMB_13 . Expr6
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_29   shift, and go to state 30
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 54
+
+    Expr6  go to state 55
+
+
+state 29
+
+   45 Expr5: _SYMB_14 . Expr6
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_29   shift, and go to state 30
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 54
+
+    Expr6  go to state 56
+
+
+state 30
+
+   40 Expr6: _SYMB_29 .
+
+    $default  reduce using rule 40 (Expr6)
+
+
+state 31
+
+   26 Stmt: _SYMB_30 . _SYMB_0 Type _IDENT_ _SYMB_11 Expr _SYMB_1 Stmt
+
+    _SYMB_0  shift, and go to state 57
+
+
+state 32
+
+   22 Stmt: _SYMB_31 . _SYMB_0 Expr _SYMB_1 Stmt
+   23     | _SYMB_31 . _SYMB_0 Expr _SYMB_1 Stmt _SYMB_28 Stmt
+
+    _SYMB_0  shift, and go to state 58
+
+
+state 33
+
+   46 Expr5: _SYMB_34 . Type _SYMB_3 Expr6 _SYMB_4
+
+    _SYMB_27  shift, and go to state 1
+    _SYMB_32  shift, and go to state 2
+    _SYMB_36  shift, and go to state 3
+    _SYMB_38  shift, and go to state 4
+
+    Type  go to state 59
+
+
+state 34
+
+   20 Stmt: _SYMB_35 . Expr _SYMB_7
+   21     | _SYMB_35 . _SYMB_7
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_7    shift, and go to state 60
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 61
+
+
+state 35
+
+   39 Expr6: _SYMB_37 .
+
+    $default  reduce using rule 39 (Expr6)
+
+
+state 36
+
+   24 Stmt: _SYMB_39 . _SYMB_0 Expr _SYMB_1 Stmt
+
+    _SYMB_0  shift, and go to state 62
+
+
+state 37
+
+   42 Expr6: _STRING_ .
+
+    $default  reduce using rule 42 (Expr6)
+
+
+state 38
+
+   38 Expr6: _INTEGER_ .
+
+    $default  reduce using rule 38 (Expr6)
+
+
+state 39
+
+    9 Acc: _IDENT_ . _SYMB_3 Expr _SYMB_4
+   16 Stmt: _IDENT_ . _SYMB_8 Expr _SYMB_7
+   18     | _IDENT_ . _SYMB_9 _SYMB_7
+   19     | _IDENT_ . _SYMB_10 _SYMB_7
+   36 Expr6: _IDENT_ . _SYMB_12 _SYMB_33
+   37      | _IDENT_ .
+   41      | _IDENT_ . _SYMB_0 ListExpr _SYMB_1
+
+    _SYMB_0   shift, and go to state 63
+    _SYMB_3   shift, and go to state 64
+    _SYMB_8   shift, and go to state 65
+    _SYMB_9   shift, and go to state 66
+    _SYMB_10  shift, and go to state 67
+    _SYMB_12  shift, and go to state 68
+
+    $default  reduce using rule 37 (Expr6)
+
+
+state 40
+
+   17 Stmt: Acc . _SYMB_8 Expr _SYMB_7
+   47 Expr5: Acc .
+
+    _SYMB_8  shift, and go to state 69
+
+    $default  reduce using rule 47 (Expr5)
+
+
+state 41
+
+   14 Stmt: Block .
+
+    $default  reduce using rule 14 (Stmt)
+
+
+state 42
+
+   12 ListStmt: ListStmt Stmt .
+
+    $default  reduce using rule 12 (ListStmt)
+
+
+state 43
+
+   15 Stmt: Type . ListItem _SYMB_7
+   35 Type: Type . _SYMB_3 _SYMB_4
+
+    _SYMB_3  shift, and go to state 11
+    _IDENT_  shift, and go to state 70
+
+    Item      go to state 71
+    ListItem  go to state 72
+
+
+state 44
+
+   48 Expr5: Expr6 .
+
+    $default  reduce using rule 48 (Expr5)
+
+
+state 45
+
+   50 Expr4: Expr5 .
+
+    $default  reduce using rule 50 (Expr4)
+
+
+state 46
+
+   49 Expr4: Expr4 . MulOp Expr5
+   52 Expr3: Expr4 .
+
+    _SYMB_18  shift, and go to state 73
+    _SYMB_19  shift, and go to state 74
+    _SYMB_20  shift, and go to state 75
+
+    $default  reduce using rule 52 (Expr3)
+
+    MulOp  go to state 76
+
+
+state 47
+
+   51 Expr3: Expr3 . AddOp Expr4
+   54 Expr2: Expr3 .
+
+    _SYMB_13  shift, and go to state 77
+    _SYMB_17  shift, and go to state 78
+
+    $default  reduce using rule 54 (Expr2)
+
+    AddOp  go to state 79
+
+
+state 48
+
+   53 Expr2: Expr2 . RelOp Expr3
+   55 Expr1: Expr2 . _SYMB_15 Expr1
+   56      | Expr2 .
+
+    _SYMB_15  shift, and go to state 80
+    _SYMB_21  shift, and go to state 81
+    _SYMB_22  shift, and go to state 82
+    _SYMB_23  shift, and go to state 83
+    _SYMB_24  shift, and go to state 84
+    _SYMB_25  shift, and go to state 85
+    _SYMB_26  shift, and go to state 86
+
+    $default  reduce using rule 56 (Expr1)
+
+    RelOp  go to state 87
+
+
+state 49
+
+   57 Expr: Expr1 . _SYMB_16 Expr
+   58     | Expr1 .
+
+    _SYMB_16  shift, and go to state 88
+
+    $default  reduce using rule 58 (Expr)
+
+
+state 50
+
+   25 Stmt: Expr . _SYMB_7
+
+    _SYMB_7  shift, and go to state 89
+
+
+state 51
+
+    9 Acc: _IDENT_ . _SYMB_3 Expr _SYMB_4
+   36 Expr6: _IDENT_ . _SYMB_12 _SYMB_33
+   37      | _IDENT_ .
+   41      | _IDENT_ . _SYMB_0 ListExpr _SYMB_1
+
+    _SYMB_0   shift, and go to state 63
+    _SYMB_3   shift, and go to state 64
+    _SYMB_12  shift, and go to state 68
+
+    $default  reduce using rule 37 (Expr6)
+
+
+state 52
+
+   47 Expr5: Acc .
+
+    $default  reduce using rule 47 (Expr5)
+
+
+state 53
+
+   43 Expr6: _SYMB_0 Expr . _SYMB_1
+
+    _SYMB_1  shift, and go to state 90
+
+
+state 54
+
+   36 Expr6: _IDENT_ . _SYMB_12 _SYMB_33
+   37      | _IDENT_ .
+   41      | _IDENT_ . _SYMB_0 ListExpr _SYMB_1
+
+    _SYMB_0   shift, and go to state 63
+    _SYMB_12  shift, and go to state 68
+
+    $default  reduce using rule 37 (Expr6)
+
+
+state 55
+
+   44 Expr5: _SYMB_13 Expr6 .
+
+    $default  reduce using rule 44 (Expr5)
+
+
+state 56
+
+   45 Expr5: _SYMB_14 Expr6 .
+
+    $default  reduce using rule 45 (Expr5)
+
+
+state 57
+
+   26 Stmt: _SYMB_30 _SYMB_0 . Type _IDENT_ _SYMB_11 Expr _SYMB_1 Stmt
+
+    _SYMB_27  shift, and go to state 1
+    _SYMB_32  shift, and go to state 2
+    _SYMB_36  shift, and go to state 3
+    _SYMB_38  shift, and go to state 4
+
+    Type  go to state 91
+
+
+state 58
+
+   22 Stmt: _SYMB_31 _SYMB_0 . Expr _SYMB_1 Stmt
+   23     | _SYMB_31 _SYMB_0 . Expr _SYMB_1 Stmt _SYMB_28 Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 92
+
+
+state 59
+
+   35 Type: Type . _SYMB_3 _SYMB_4
+   46 Expr5: _SYMB_34 Type . _SYMB_3 Expr6 _SYMB_4
+
+    _SYMB_3  shift, and go to state 93
+
+
+state 60
+
+   21 Stmt: _SYMB_35 _SYMB_7 .
+
+    $default  reduce using rule 21 (Stmt)
+
+
+state 61
+
+   20 Stmt: _SYMB_35 Expr . _SYMB_7
+
+    _SYMB_7  shift, and go to state 94
+
+
+state 62
+
+   24 Stmt: _SYMB_39 _SYMB_0 . Expr _SYMB_1 Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 95
+
+
+state 63
+
+   41 Expr6: _IDENT_ _SYMB_0 . ListExpr _SYMB_1
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    $default  reduce using rule 59 (ListExpr)
+
+    Acc       go to state 52
+    Expr6     go to state 44
+    Expr5     go to state 45
+    Expr4     go to state 46
+    Expr3     go to state 47
+    Expr2     go to state 48
+    Expr1     go to state 49
+    Expr      go to state 96
+    ListExpr  go to state 97
+
+
+state 64
+
+    9 Acc: _IDENT_ _SYMB_3 . Expr _SYMB_4
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 98
+
+
+state 65
+
+   16 Stmt: _IDENT_ _SYMB_8 . Expr _SYMB_7
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 99
+
+
+state 66
+
+   18 Stmt: _IDENT_ _SYMB_9 . _SYMB_7
+
+    _SYMB_7  shift, and go to state 100
+
+
+state 67
+
+   19 Stmt: _IDENT_ _SYMB_10 . _SYMB_7
+
+    _SYMB_7  shift, and go to state 101
+
+
+state 68
+
+   36 Expr6: _IDENT_ _SYMB_12 . _SYMB_33
+
+    _SYMB_33  shift, and go to state 102
+
+
+state 69
+
+   17 Stmt: Acc _SYMB_8 . Expr _SYMB_7
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 103
+
+
+state 70
+
+   27 Item: _IDENT_ .
+   28     | _IDENT_ . _SYMB_8 Expr
+
+    _SYMB_8  shift, and go to state 104
+
+    $default  reduce using rule 27 (Item)
+
+
+state 71
+
+   29 ListItem: Item .
+   30         | Item . _SYMB_2 ListItem
+
+    _SYMB_2  shift, and go to state 105
+
+    $default  reduce using rule 29 (ListItem)
+
+
+state 72
+
+   15 Stmt: Type ListItem . _SYMB_7
+
+    _SYMB_7  shift, and go to state 106
+
+
+state 73
+
+   64 MulOp: _SYMB_18 .
+
+    $default  reduce using rule 64 (MulOp)
+
+
+state 74
+
+   65 MulOp: _SYMB_19 .
+
+    $default  reduce using rule 65 (MulOp)
+
+
+state 75
+
+   66 MulOp: _SYMB_20 .
+
+    $default  reduce using rule 66 (MulOp)
+
+
+state 76
+
+   49 Expr4: Expr4 MulOp . Expr5
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 107
+
+
+state 77
+
+   63 AddOp: _SYMB_13 .
+
+    $default  reduce using rule 63 (AddOp)
+
+
+state 78
+
+   62 AddOp: _SYMB_17 .
+
+    $default  reduce using rule 62 (AddOp)
+
+
+state 79
+
+   51 Expr3: Expr3 AddOp . Expr4
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 108
+
+
+state 80
+
+   55 Expr1: Expr2 _SYMB_15 . Expr1
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 109
+
+
+state 81
+
+   67 RelOp: _SYMB_21 .
+
+    $default  reduce using rule 67 (RelOp)
+
+
+state 82
+
+   68 RelOp: _SYMB_22 .
+
+    $default  reduce using rule 68 (RelOp)
+
+
+state 83
+
+   69 RelOp: _SYMB_23 .
+
+    $default  reduce using rule 69 (RelOp)
+
+
+state 84
+
+   70 RelOp: _SYMB_24 .
+
+    $default  reduce using rule 70 (RelOp)
+
+
+state 85
+
+   71 RelOp: _SYMB_25 .
+
+    $default  reduce using rule 71 (RelOp)
+
+
+state 86
+
+   72 RelOp: _SYMB_26 .
+
+    $default  reduce using rule 72 (RelOp)
+
+
+state 87
+
+   53 Expr2: Expr2 RelOp . Expr3
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 110
+
+
+state 88
+
+   57 Expr: Expr1 _SYMB_16 . Expr
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 111
+
+
+state 89
+
+   25 Stmt: Expr _SYMB_7 .
+
+    $default  reduce using rule 25 (Stmt)
+
+
+state 90
+
+   43 Expr6: _SYMB_0 Expr _SYMB_1 .
+
+    $default  reduce using rule 43 (Expr6)
+
+
+state 91
+
+   26 Stmt: _SYMB_30 _SYMB_0 Type . _IDENT_ _SYMB_11 Expr _SYMB_1 Stmt
+   35 Type: Type . _SYMB_3 _SYMB_4
+
+    _SYMB_3  shift, and go to state 11
+    _IDENT_  shift, and go to state 112
+
+
+state 92
+
+   22 Stmt: _SYMB_31 _SYMB_0 Expr . _SYMB_1 Stmt
+   23     | _SYMB_31 _SYMB_0 Expr . _SYMB_1 Stmt _SYMB_28 Stmt
+
+    _SYMB_1  shift, and go to state 113
+
+
+state 93
+
+   35 Type: Type _SYMB_3 . _SYMB_4
+   46 Expr5: _SYMB_34 Type _SYMB_3 . Expr6 _SYMB_4
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_4    shift, and go to state 13
+    _SYMB_29   shift, and go to state 30
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 54
+
+    Expr6  go to state 114
+
+
+state 94
+
+   20 Stmt: _SYMB_35 Expr _SYMB_7 .
+
+    $default  reduce using rule 20 (Stmt)
+
+
+state 95
+
+   24 Stmt: _SYMB_39 _SYMB_0 Expr . _SYMB_1 Stmt
+
+    _SYMB_1  shift, and go to state 115
+
+
+state 96
+
+   60 ListExpr: Expr .
+   61         | Expr . _SYMB_2 ListExpr
+
+    _SYMB_2  shift, and go to state 116
+
+    $default  reduce using rule 60 (ListExpr)
+
+
+state 97
+
+   41 Expr6: _IDENT_ _SYMB_0 ListExpr . _SYMB_1
+
+    _SYMB_1  shift, and go to state 117
+
+
+state 98
+
+    9 Acc: _IDENT_ _SYMB_3 Expr . _SYMB_4
+
+    _SYMB_4  shift, and go to state 118
+
+
+state 99
+
+   16 Stmt: _IDENT_ _SYMB_8 Expr . _SYMB_7
+
+    _SYMB_7  shift, and go to state 119
+
+
+state 100
+
+   18 Stmt: _IDENT_ _SYMB_9 _SYMB_7 .
+
+    $default  reduce using rule 18 (Stmt)
+
+
+state 101
+
+   19 Stmt: _IDENT_ _SYMB_10 _SYMB_7 .
+
+    $default  reduce using rule 19 (Stmt)
+
+
+state 102
+
+   36 Expr6: _IDENT_ _SYMB_12 _SYMB_33 .
+
+    $default  reduce using rule 36 (Expr6)
+
+
+state 103
+
+   17 Stmt: Acc _SYMB_8 Expr . _SYMB_7
+
+    _SYMB_7  shift, and go to state 120
+
+
+state 104
+
+   28 Item: _IDENT_ _SYMB_8 . Expr
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 121
+
+
+state 105
+
+   30 ListItem: Item _SYMB_2 . ListItem
+
+    _IDENT_  shift, and go to state 70
+
+    Item      go to state 71
+    ListItem  go to state 122
+
+
+state 106
+
+   15 Stmt: Type ListItem _SYMB_7 .
+
+    $default  reduce using rule 15 (Stmt)
+
+
+state 107
+
+   49 Expr4: Expr4 MulOp Expr5 .
+
+    $default  reduce using rule 49 (Expr4)
+
+
+state 108
+
+   49 Expr4: Expr4 . MulOp Expr5
+   51 Expr3: Expr3 AddOp Expr4 .
+
+    _SYMB_18  shift, and go to state 73
+    _SYMB_19  shift, and go to state 74
+    _SYMB_20  shift, and go to state 75
+
+    $default  reduce using rule 51 (Expr3)
+
+    MulOp  go to state 76
+
+
+state 109
+
+   55 Expr1: Expr2 _SYMB_15 Expr1 .
+
+    $default  reduce using rule 55 (Expr1)
+
+
+state 110
+
+   51 Expr3: Expr3 . AddOp Expr4
+   53 Expr2: Expr2 RelOp Expr3 .
+
+    _SYMB_13  shift, and go to state 77
+    _SYMB_17  shift, and go to state 78
+
+    $default  reduce using rule 53 (Expr2)
+
+    AddOp  go to state 79
+
+
+state 111
+
+   57 Expr: Expr1 _SYMB_16 Expr .
+
+    $default  reduce using rule 57 (Expr)
+
+
+state 112
+
+   26 Stmt: _SYMB_30 _SYMB_0 Type _IDENT_ . _SYMB_11 Expr _SYMB_1 Stmt
+
+    _SYMB_11  shift, and go to state 123
+
+
+state 113
+
+   22 Stmt: _SYMB_31 _SYMB_0 Expr _SYMB_1 . Stmt
+   23     | _SYMB_31 _SYMB_0 Expr _SYMB_1 . Stmt _SYMB_28 Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_5    shift, and go to state 22
+    _SYMB_7    shift, and go to state 27
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_27   shift, and go to state 1
+    _SYMB_29   shift, and go to state 30
+    _SYMB_30   shift, and go to state 31
+    _SYMB_31   shift, and go to state 32
+    _SYMB_32   shift, and go to state 2
+    _SYMB_34   shift, and go to state 33
+    _SYMB_35   shift, and go to state 34
+    _SYMB_36   shift, and go to state 3
+    _SYMB_37   shift, and go to state 35
+    _SYMB_38   shift, and go to state 4
+    _SYMB_39   shift, and go to state 36
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 39
+
+    Acc    go to state 40
+    Block  go to state 41
+    Stmt   go to state 124
+    Type   go to state 43
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 50
+
+
+state 114
+
+   46 Expr5: _SYMB_34 Type _SYMB_3 Expr6 . _SYMB_4
+
+    _SYMB_4  shift, and go to state 125
+
+
+state 115
+
+   24 Stmt: _SYMB_39 _SYMB_0 Expr _SYMB_1 . Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_5    shift, and go to state 22
+    _SYMB_7    shift, and go to state 27
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_27   shift, and go to state 1
+    _SYMB_29   shift, and go to state 30
+    _SYMB_30   shift, and go to state 31
+    _SYMB_31   shift, and go to state 32
+    _SYMB_32   shift, and go to state 2
+    _SYMB_34   shift, and go to state 33
+    _SYMB_35   shift, and go to state 34
+    _SYMB_36   shift, and go to state 3
+    _SYMB_37   shift, and go to state 35
+    _SYMB_38   shift, and go to state 4
+    _SYMB_39   shift, and go to state 36
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 39
+
+    Acc    go to state 40
+    Block  go to state 41
+    Stmt   go to state 126
+    Type   go to state 43
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 50
+
+
+state 116
+
+   61 ListExpr: Expr _SYMB_2 . ListExpr
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    $default  reduce using rule 59 (ListExpr)
+
+    Acc       go to state 52
+    Expr6     go to state 44
+    Expr5     go to state 45
+    Expr4     go to state 46
+    Expr3     go to state 47
+    Expr2     go to state 48
+    Expr1     go to state 49
+    Expr      go to state 96
+    ListExpr  go to state 127
+
+
+state 117
+
+   41 Expr6: _IDENT_ _SYMB_0 ListExpr _SYMB_1 .
+
+    $default  reduce using rule 41 (Expr6)
+
+
+state 118
+
+    9 Acc: _IDENT_ _SYMB_3 Expr _SYMB_4 .
+
+    $default  reduce using rule 9 (Acc)
+
+
+state 119
+
+   16 Stmt: _IDENT_ _SYMB_8 Expr _SYMB_7 .
+
+    $default  reduce using rule 16 (Stmt)
+
+
+state 120
+
+   17 Stmt: Acc _SYMB_8 Expr _SYMB_7 .
+
+    $default  reduce using rule 17 (Stmt)
+
+
+state 121
+
+   28 Item: _IDENT_ _SYMB_8 Expr .
+
+    $default  reduce using rule 28 (Item)
+
+
+state 122
+
+   30 ListItem: Item _SYMB_2 ListItem .
+
+    $default  reduce using rule 30 (ListItem)
+
+
+state 123
+
+   26 Stmt: _SYMB_30 _SYMB_0 Type _IDENT_ _SYMB_11 . Expr _SYMB_1 Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_29   shift, and go to state 30
+    _SYMB_34   shift, and go to state 33
+    _SYMB_37   shift, and go to state 35
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 51
+
+    Acc    go to state 52
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 128
+
+
+state 124
+
+   22 Stmt: _SYMB_31 _SYMB_0 Expr _SYMB_1 Stmt .
+   23     | _SYMB_31 _SYMB_0 Expr _SYMB_1 Stmt . _SYMB_28 Stmt
+
+    _SYMB_28  shift, and go to state 129
+
+    _SYMB_28  [reduce using rule 22 (Stmt)]
+    $default  reduce using rule 22 (Stmt)
+
+
+state 125
+
+   46 Expr5: _SYMB_34 Type _SYMB_3 Expr6 _SYMB_4 .
+
+    $default  reduce using rule 46 (Expr5)
+
+
+state 126
+
+   24 Stmt: _SYMB_39 _SYMB_0 Expr _SYMB_1 Stmt .
+
+    $default  reduce using rule 24 (Stmt)
+
+
+state 127
+
+   61 ListExpr: Expr _SYMB_2 ListExpr .
+
+    $default  reduce using rule 61 (ListExpr)
+
+
+state 128
+
+   26 Stmt: _SYMB_30 _SYMB_0 Type _IDENT_ _SYMB_11 Expr . _SYMB_1 Stmt
+
+    _SYMB_1  shift, and go to state 130
+
+
+state 129
+
+   23 Stmt: _SYMB_31 _SYMB_0 Expr _SYMB_1 Stmt _SYMB_28 . Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_5    shift, and go to state 22
+    _SYMB_7    shift, and go to state 27
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_27   shift, and go to state 1
+    _SYMB_29   shift, and go to state 30
+    _SYMB_30   shift, and go to state 31
+    _SYMB_31   shift, and go to state 32
+    _SYMB_32   shift, and go to state 2
+    _SYMB_34   shift, and go to state 33
+    _SYMB_35   shift, and go to state 34
+    _SYMB_36   shift, and go to state 3
+    _SYMB_37   shift, and go to state 35
+    _SYMB_38   shift, and go to state 4
+    _SYMB_39   shift, and go to state 36
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 39
+
+    Acc    go to state 40
+    Block  go to state 41
+    Stmt   go to state 131
+    Type   go to state 43
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 50
+
+
+state 130
+
+   26 Stmt: _SYMB_30 _SYMB_0 Type _IDENT_ _SYMB_11 Expr _SYMB_1 . Stmt
+
+    _SYMB_0    shift, and go to state 25
+    _SYMB_5    shift, and go to state 22
+    _SYMB_7    shift, and go to state 27
+    _SYMB_13   shift, and go to state 28
+    _SYMB_14   shift, and go to state 29
+    _SYMB_27   shift, and go to state 1
+    _SYMB_29   shift, and go to state 30
+    _SYMB_30   shift, and go to state 31
+    _SYMB_31   shift, and go to state 32
+    _SYMB_32   shift, and go to state 2
+    _SYMB_34   shift, and go to state 33
+    _SYMB_35   shift, and go to state 34
+    _SYMB_36   shift, and go to state 3
+    _SYMB_37   shift, and go to state 35
+    _SYMB_38   shift, and go to state 4
+    _SYMB_39   shift, and go to state 36
+    _STRING_   shift, and go to state 37
+    _INTEGER_  shift, and go to state 38
+    _IDENT_    shift, and go to state 39
+
+    Acc    go to state 40
+    Block  go to state 41
+    Stmt   go to state 132
+    Type   go to state 43
+    Expr6  go to state 44
+    Expr5  go to state 45
+    Expr4  go to state 46
+    Expr3  go to state 47
+    Expr2  go to state 48
+    Expr1  go to state 49
+    Expr   go to state 50
+
+
+state 131
+
+   23 Stmt: _SYMB_31 _SYMB_0 Expr _SYMB_1 Stmt _SYMB_28 Stmt .
+
+    $default  reduce using rule 23 (Stmt)
+
+
+state 132
+
+   26 Stmt: _SYMB_30 _SYMB_0 Type _IDENT_ _SYMB_11 Expr _SYMB_1 Stmt .
+
+    $default  reduce using rule 26 (Stmt)

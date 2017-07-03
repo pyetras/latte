@@ -1,0 +1,24 @@
+#!/bin/bash
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+reset=$(tput sgr0)
+for dir in ${@:2}; do
+	for file in $dir/*.lat; do
+		cat $file | $1 1>latte.ll 2>/dev/null
+		code=$?
+		if [ $code != 0 ]; then
+			echo $red" ✗ "$file$reset
+		else
+			echo $green" ✓ "$file$reset
+			name=${file%.*}
+			if [ -f $name.output ]
+			then
+				if [ -f $name.input ]; then
+			    llc latte.ll && clang latte.s lib/runtime.bc && ./a.out > out < $name.input &&  diff -q out $name.output
+				else
+					llc latte.ll && clang latte.s lib/runtime.bc && ./a.out > out &&  diff -q out $name.output
+				fi
+			fi
+		fi
+	done
+done
